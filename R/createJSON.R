@@ -221,7 +221,7 @@ createJSON <- function(phi = matrix(), theta = matrix(), doc.length = integer(),
 
   # Order the terms for the "default" view by decreasing saliency:
   default.terms <- vocab[order(saliency, decreasing = TRUE)][1:R]
-  counts <- as.integer(term.frequency[match(default.terms, vocab)])
+  counts <- as.numeric(term.frequency[match(default.terms, vocab)])
   Rs <- rev(seq_len(R))
   default <- data.frame(Term = default.terms, logprob = Rs, loglift = Rs, 
                         Freq = counts, Total = counts, Category = "Default", 
