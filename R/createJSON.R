@@ -129,7 +129,7 @@ createJSON <- function(phi = matrix(), theta = matrix(), doc.length = integer(),
   dp <- dim(phi)  # should be K x W
   dt <- dim(theta)  # should be D x K
 
-  N <- sum(doc.length)  # number of tokens in the data
+  N <- sum(as.numeric(doc.length))  # number of tokens in the data
   W <- length(vocab)  # number of terms in the vocab
   D <- length(doc.length)  # number of documents in the data
   K <- dt[2]  # number of topics in the model
